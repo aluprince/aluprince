@@ -1,6 +1,6 @@
 ## Hi, I’m Alu Prince 👋
 
-Backend and AI Engineer focused on building reliable server-side systems with Python, APIs, and databases.
+Backend Engineer focused on building reliable server-side systems with Python, APIs, and databases.
 I also integrate AI where it adds real engineering value.
 
 ---
