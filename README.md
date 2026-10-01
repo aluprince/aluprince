@@ -85,4 +85,4 @@ Most people call themselves "AI engineers" because they can call an API. Here's 
 
 - **Email:** aluprince03@gmail.com
 - **LinkedIn:** [linkedin.com/in/alu-onari](https://www.linkedin.com/in/alu-onari)
-- **Portfolio:** [portfolio-k9xo.onrender.com](https://portfolio-k9xo.onrender.com)
+- **Portfolio:** [https://alu.lenoben.top](https://alu.lenoben.top)
