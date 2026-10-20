@@ -1,88 +1,122 @@
-# Alu Prince - Backend Engineer
+# Alu Prince | Backend Engineer
 
-Go and Python for building backend systems that work correctly under real conditions. APIs, data pipelines, AI integration, and financial infrastructure.
+I build backend systems in **Go and Python** with a focus on correctness, reliability, data-intensive workloads, and AI integration.
 
-Based in Nigeria. Open to backend roles at startups and growing companies - locally and remotely.
+From financial ledgers to semantic search and retrieval-augmented generation, I care about what happens beyond the happy path: failure handling, data integrity, testing, and maintainable architecture.
 
----
-
-## What I Build
-
-**Backend APIs and services** - REST APIs with proper error handling, idempotency, pagination, and observability. Systems designed to handle real load, not just pass a demo.
-
-**AI-powered backends** - RAG pipelines, semantic search, LLM integration, embedding-based scoring. Not wrappers around ChatGPT - actual retrieval systems with context management and structured outputs.
-
-**Data pipelines and automation** - scrapers that feed LLMs that feed Telegram bots. End-to-end pipelines that run without manual intervention.
-
-**Financial systems** - double-entry ledgers, wallet APIs, payment infrastructure with real accounting models and correctness guarantees.
+Based in Nigeria. Open to backend engineering roles and remote opportunities.
 
 ---
 
 ## Featured Projects
 
-### [ledger-core](https://github.com/aluprince/ledger-core) - Go
-Production-grade double-entry ledger and wallet API. Integer money storage, atomic transfers, idempotency keys, cursor pagination, computed balances. Full integration test suite against real PostgreSQL. CI with race detector on every push.
+### 1. [Ledger Core](https://github.com/aluprince/ledger-core) | Go, PostgreSQL
 
-**Live:** `https://ledger-core-ksma.onrender.com/health`
+**Double-entry ledger and wallet API**
 
-### [sniperhire](https://github.com/aluprince/sniperhire) - Python
-Resume parsing engine with AI semantic scoring. Matches candidates to job descriptions using LLM + embedding similarity - cosine similarity scoring, not keyword matching. ATS-style gap analysis.
+A financial backend built around accounting correctness and reliable transaction processing.
 
-### [vector-vanguard](https://github.com/aluprince/vector-vanguard) - Go + Python
-Automated outreach pipeline. Go-based web scraper → LLM enrichment from scraped context → structured Telegram delivery. Zero manual intervention.
+- Double-entry bookkeeping and computed account balances
+- Integer-based monetary amounts to avoid floating-point precision errors
+- Atomic transfers and idempotency keys
+- Cursor-based pagination
+- Integration tests against PostgreSQL
+- CI with automated testing and race detection
+
+**Live API:** [Health check](https://ledger-core-ksma.onrender.com/health)
+
+### 2. [Atlas-RAG](https://github.com/aluprince/atlas-rag) | Python, FastAPI, PostgreSQL, pgvector
+
+**Document retrieval and question-answering system**
+
+A retrieval-augmented generation application that turns documents into searchable knowledge and uses relevant retrieved context to support answers.
+
+- Document ingestion and text extraction
+- Chunking and embedding generation
+- Vector similarity search with PostgreSQL and pgvector
+- Retrieval results with similarity scores and source metadata
+- Groq-powered answer generation
+- FastAPI backend and Streamlit interface
+
+The project explores the engineering behind RAG systems, including document processing, retrieval quality, context construction, and source traceability.
+
+### 3. [SniperHire](https://github.com/aluprince/sniperhire) | Python, AI Integration
+
+**Resume parsing and semantic candidate matching**
+
+An ATS-style project that evaluates resumes against job descriptions using structured information extraction and semantic matching.
+
+- Resume parsing and information extraction
+- Embedding-based similarity scoring
+- LLM-assisted analysis
+- Candidate-to-role matching and skills gap analysis
+
+### 4. [Vector-Vanguard](https://github.com/aluprince/Vector-Vanguard) | Go, Python, LLMs
+
+**Automated web research and outreach pipeline**
+
+A pipeline that combines data collection, LLM-assisted enrichment, and structured delivery.
+
+- Web scraping and data extraction
+- Context-aware LLM enrichment
+- Structured output processing
+- Telegram Bot API integration
 
 ---
 
-## Stack
+## Engineering Focus
 
-| Layer | Tools |
+**Backend systems**
+- REST API design and service boundaries
+- Error handling and validation
+- Idempotency and reliable request processing
+- Pagination and database query design
+- Integration testing and failure handling
+
+**Data and financial infrastructure**
+- PostgreSQL and raw SQL
+- Transactions, atomicity, and data integrity
+- Double-entry accounting
+- Integer-based monetary representation
+- Database-backed integration tests
+
+**AI engineering and integration**
+- Embeddings and semantic similarity
+- Vector search and retrieval pipelines
+- Retrieval-augmented generation (RAG)
+- LLM API integration and structured outputs
+- Context construction and source traceability
+- Data extraction and LLM-assisted automation
+
+---
+
+## Tech Stack
+
+| Category | Technologies |
 |---|---|
-| Primary language | Go |
-| Secondary | Python |
-| Databases | PostgreSQL (raw SQL, sqlc), vector databases |
-| AI / LLM | Groq API, OpenAI API, Anthropic API |
-| Embeddings | Embedding models, semantic search, similarity scoring |
-| RAG | Retrieval-augmented generation, vector search, context management |
-| Scraping | Playwright, BeautifulSoup, Selenium, Go HTTP clients |
-| Infra | Docker, GitHub Actions CI, Linux/VPS, Render |
-| APIs | REST, Telegram Bot API, webhooks |
-| Concepts | System design, idempotency, ACID transactions, double-entry accounting |
+| Languages | Go, Python, JavaScript |
+| Backend | FastAPI, Node.js, REST APIs |
+| Databases | PostgreSQL, SQL, pgvector |
+| AI integration | Groq API, embedding models, semantic search, RAG |
+| Testing | pytest, integration testing |
+| Infrastructure | Docker, Docker Compose, GitHub Actions, Linux, Render |
+| Integrations | Telegram Bot API, external APIs |
 
 ---
 
-## AI Integration - What I Actually Know
+## Engineering Principles
 
-Most people call themselves "AI engineers" because they can call an API. Here's what I actually do:
-
-**Embedding models** - converting text into dense vector representations for semantic understanding. Used in sniperhire to score resume-to-job fit beyond keyword matching.
-
-**Semantic search** - finding meaning, not exact matches. A search for "payment processing engineer" surfaces "fintech backend developer" because the vectors are close, not because the words match.
-
-**Similarity scoring** - cosine similarity between embedding vectors to rank relevance. Produces a score with reasoning, not a yes/no.
-
-**Vector databases** - storing and querying high-dimensional vectors efficiently for retrieval at scale.
-
-**RAG pipelines** - retrieve relevant context from a knowledge base, inject it into an LLM prompt, get grounded responses. Answers come from real data, not hallucination.
-
-**LLM API integration** - Groq, OpenAI, Anthropic. Prompt engineering, structured outputs, context window management, cost-aware model selection.
-
-**Web scraping for AI** - Go scrapers for speed, Python (Playwright/BeautifulSoup) for JavaScript-heavy sites. Extract structured data and pass it to LLMs for enrichment.
-
----
-
-## What I Know That Most Don't
-
-- Why `float64` for money is wrong and how to fix it (`int64` in smallest currency unit)
-- How double-entry accounting works and why balance columns break at scale
-- The difference between cursor and offset pagination - and when offset pagination silently breaks
-- How RAG actually works under the hood - not just "use LangChain"
-- Why embedding similarity beats keyword search for semantic tasks
-- How to write integration tests that prove financial invariants, not just unit tests that prove your mock works
+- **Correctness before convenience.** Financial operations should preserve accounting invariants, not merely return successful HTTP responses.
+- **Test real behavior.** Database-backed integration tests reveal failures that mocked dependencies can hide.
+- **Design for failure.** Idempotency, transaction boundaries, validation, and error handling matter as much as the happy path.
+- **Understand the abstraction.** I want to understand SQL queries, vector similarity, retrieval, and request lifecycles rather than depend blindly on frameworks.
+- **Use AI where it adds value.** Semantic retrieval and LLM integration should solve concrete problems, with attention to relevance, context, and output quality.
 
 ---
 
 ## Contact
 
-- **Email:** aluprince03@gmail.com
+- **Email:** [aluprince03@gmail.com](mailto:aluprince03@gmail.com)
 - **LinkedIn:** [linkedin.com/in/alu-onari](https://www.linkedin.com/in/alu-onari)
-- **Portfolio:** [https://alu.lenoben.top](https://alu.lenoben.top)
+- **Portfolio:** [alu.lenoben.top](https://alu.lenoben.top)
+
